@@ -17,6 +17,7 @@ class EmpleadoConBonificaciones extends Empleado with Bonificaciones{
      EmpleadoConBonificaciones(String nombre, String apellido, double salario, double horasTrabajadas) 
     : super(nombre, apellido, salario, horasTrabajadas);
     void mostrarBonificacion() {
+      calcularBonificacion();
     print('Nombre: ${nombre} ${apellido}, Bonificacion: \S/${salario}');
   }
 }

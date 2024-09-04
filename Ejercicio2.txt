@@ -1,0 +1,37 @@
+class Calculadora {
+  void suma() {
+    print("Sumando");
+  }
+  void resta(){
+    print("Restando");
+  }
+  void multiplicacion(){
+    print("Multiplicando");
+  }
+  void divicion(){
+    print ("Dividnendo");
+  }
+}
+
+mixin OperacionesAdicionales{
+  void potencia(){
+    print("Se realizo potencia");
+  }
+}
+
+mixin OperacionesAvanzadas{
+  void raiz(){
+    print("Se saco raiz cuadrada");
+  }
+}
+
+class CalculadoraAvanzada extends Calculadora with OperacionesAdicionales, OperacionesAvanzadas{
+  
+}
+
+void main(){
+  var calculadoraAvanzada = CalculadoraAvanzada();
+  calculadoraAvanzada.suma();
+  calculadoraAvanzada.raiz();
+  calculadoraAvanzada.potencia();
+}

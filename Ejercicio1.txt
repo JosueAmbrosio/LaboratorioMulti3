@@ -1,0 +1,23 @@
+class Usuario {
+  String nombre;
+  String email;
+  String contrasena;
+  
+  Usuario(this.nombre, this.email, this.contrasena);
+}
+
+mixin Autenticacion{
+  void iniciarSesion(){
+    print("Se inicio sesion");
+  }
+}
+
+class UsuarioAutenticado extends Usuario with Autenticacion{
+   UsuarioAutenticado(String nombre, String email, String contrasena) 
+    : super(nombre, email, contrasena);
+}
+
+void main(){
+  var usuarioAutenticado = UsuarioAutenticado("Josue","josue@tecsup","HolaMundo");
+  usuarioAutenticado.iniciarSesion();
+}

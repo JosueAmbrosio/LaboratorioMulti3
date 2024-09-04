@@ -1,0 +1,32 @@
+class Empleado{
+  String nombre;
+  String apellido;
+  double salario;
+  double horasTrabajadas;
+  
+  Empleado(this.nombre, this.apellido, this.salario, this.horasTrabajadas);
+}
+
+mixin Bonificaciones{
+  void calcularBonificacion(){
+    print("Calculando bonificacion");
+  }
+}
+
+class EmpleadoConBonificaciones extends Empleado with Bonificaciones{
+     EmpleadoConBonificaciones(String nombre, String apellido, double salario, double horasTrabajadas) 
+    : super(nombre, apellido, salario, horasTrabajadas);
+    void mostrarBonificacion() {
+    print('Nombre: ${nombre} ${apellido}, Bonificacion: \S/${salario}');
+  }
+}
+
+void main(){
+  List<EmpleadoConBonificaciones> empleados = [
+    EmpleadoConBonificaciones('Josue', 'Ambrosio', 5000.0, 40.0),
+    EmpleadoConBonificaciones('Aaron', 'Guzman', 4500.0, 35.0),
+  ];
+    for (var empleado in empleados) {
+    empleado.mostrarBonificacion();
+  }
+}
